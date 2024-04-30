@@ -18,6 +18,9 @@ on:
       pkgname:
         description: 'Openwrt package name'  
         required: true
+      pkgpath:
+        description: 'Openwrt package path'  
+        required: false
       email:
         description: 'Git accuont email address'  
         required: false
@@ -37,6 +40,7 @@ jobs:
       env:
         SOURCECODEURL: ${{ github.event.inputs.sourcecode }}
         PKGNAME: ${{ github.event.inputs.pkgname }}
+        PKGPATH: ${{ github.event.inputs.pkgpath }}
         BOARD: ${{ github.event.inputs.device }}
         EMAIL: ${{ github.event.inputs.email }}
         PASSWORD: ${{ github.event.inputs.password }}
